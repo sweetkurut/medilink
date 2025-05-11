@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const LoginPage = () => {
     const nav = useNavigate();
     const handleNavigate = () => {
-        nav("/src/pages/MainPage/MainPage.tsx");
+        nav("/");
     };
 
     const onFinish = (values: string) => {
