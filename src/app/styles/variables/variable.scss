@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("@/shared/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("@/shared/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-weight: medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("@/shared/assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    /* Шрифты */
+    --font-montserrat-r: "Montserrat-Regular";
+    --font-montserrat-b: "Montserrat-Bold";
+    --font-montserrat-m: "Montserrat-Medium";
+    --font-number: "Open Sans", serif;
+
+    /* Размер шрифта для заголовков (L - Large) */
+    --font-size-L: clamp(28px, 3vw, 64px);
+    --font-line-L: clamp(33px, 3vw, 68px);
+
+    /* Размер шрифта для названия карточек (M - Medium) */
+    --font-size-M: clamp(16px, 1vw, 20px);
+    --font-line-M: clamp(14px, 3vw, 29px);
+    --font-M: var(--font-size-M) / var(--font-line-M) var(--font-montserrat-r);
+
+    /* Размер шрифта для описания (S - Small) */
+    --font-size-S: clamp(14px, 1vw, 18px);
+    --font-line-S: clamp(10px, 2vw, 28px);
+    --font-S: var(--font-size-S) / var(--font-line-S) var(--font-montserrat-r);
+
+    /* Размеры */
+    --container-width: 85%;
+
+    /* Цвета */
+    --color-black: #0a0f1a;
+    --color-hover: #242a43;
+    --color-bg-secondary: #131b2a;
+    --color-white: #fff;
+    --color-secondary: #ea961c;
+    --color-desc: #acacac;
+    --color-card-bg: #252f46;
+    --color-dark-gray: #606060;
+}

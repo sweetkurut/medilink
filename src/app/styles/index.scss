@@ -1,0 +1,14 @@
+@import "variables/variable.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+.title {
+    font-family: var(--font-montserrat-b);
+    color: var(--color-card-bg);
+}
