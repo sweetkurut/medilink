@@ -1,0 +1,19 @@
+.header {
+    padding-top: 24px;
+    &_container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .nav {
+            display: flex;
+            gap: 20px;
+
+            // &_link {
+            //     color: blanchedalmond;
+            // }
+        }
+    }
+}

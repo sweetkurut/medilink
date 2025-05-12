@@ -1,0 +1,8 @@
+.wrapper {
+    margin-top: 40px;
+    min-height: 100vh;
+    & .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+    }
+}

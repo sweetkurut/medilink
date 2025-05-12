@@ -1,7 +1,7 @@
 import s from "./login.module.scss";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, Flex } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
     const nav = useNavigate();
@@ -17,6 +17,8 @@ export const LoginPage = () => {
         <div className={s.wrapper}>
             <div className={s.container}>
                 <Form name="login" initialValues={{ remember: true }} style={{ maxWidth: 400 }} onFinish={onFinish} className={s.form}>
+                    <h3 className={s.form_title}>Добро пожаловать!</h3>
+                    <p className={s.form_title_desc}>Войдите в аккаунт чтобы продолжить</p>
                     <Form.Item name="username" rules={[{ required: true, message: "Укажите имя" }]}>
                         <Input prefix={<UserOutlined />} placeholder="Имя" />
                     </Form.Item>
@@ -36,7 +38,7 @@ export const LoginPage = () => {
                         <Button block type="primary" htmlType="submit" onClick={handleNavigate}>
                             Войти
                         </Button>
-                        Нету аккаунта? <a href="">Зарегистрироваться</a>
+                        Нету аккаунта? <Link to="/signup">Зарегистрироваться</Link>
                     </Form.Item>
                 </Form>
             </div>
