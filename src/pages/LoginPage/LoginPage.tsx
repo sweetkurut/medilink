@@ -35,7 +35,7 @@ export const LoginPage = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button block type="primary" htmlType="submit" onClick={handleNavigate}>
+                        <Button block type="primary" htmlType="submit" onClick={handleNavigate} className={s.form_btn}>
                             Войти
                         </Button>
                         Нету аккаунта? <Link to="/signup">Зарегистрироваться</Link>

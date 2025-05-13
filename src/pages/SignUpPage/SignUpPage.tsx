@@ -1,7 +1,7 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import s from "./signup.module.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SignUpPage = () => {
     const nav = useNavigate();
@@ -47,7 +47,9 @@ export const SignUpPage = () => {
                         <Button block type="primary" htmlType="submit" onClick={handleNavigate}>
                             Зарегистрироваться
                         </Button>
-                        {/* Нету аккаунта? <a href="">Зарегистрироваться</a> */}
+                        <div className={s.go_to_login}>
+                            есть аккаунт? <Link to="/login">Войти</Link>
+                        </div>
                     </Form.Item>
                 </Form>
             </div>

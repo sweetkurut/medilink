@@ -8,7 +8,7 @@ export const Header = () => {
                 <Link to="#">MediLink.kg</Link>
                 <nav className={s.nav}>
                     <div>
-                        <Link to="#" className={s.nav_link}>
+                        <Link to="/" className={s.nav_link}>
                             Главная
                         </Link>
                     </div>
