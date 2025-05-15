@@ -1,0 +1,11 @@
+.wrapper {
+    font-family: var(--font-montserrat-r) !important;
+    & .logo {
+        // color: var(--color-bg-secondary);
+        color: rgb(96, 109, 226);
+        // text-align: center;
+        margin-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

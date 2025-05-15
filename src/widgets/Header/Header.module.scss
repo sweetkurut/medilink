@@ -1,5 +1,7 @@
 .header {
-    padding-top: 24px;
+    padding: 24px;
+    background: var(--color-white);
+
     &_container {
         max-width: var(--container-width);
         margin: 0 auto;

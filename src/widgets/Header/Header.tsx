@@ -12,11 +12,11 @@ export const Header = () => {
                             Главная
                         </Link>
                     </div>
-                    <div>
+                    {/* <div>
                         <Link to="/chat" className={s.nav_link}>
                             ИИ чат
                         </Link>
-                    </div>
+                    </div> */}
                     <div>
                         <Link to="#" className={s.nav_link}>
                             Суз
