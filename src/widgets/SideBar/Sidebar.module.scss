@@ -1,5 +1,27 @@
 .wrapper {
     font-family: var(--font-montserrat-r) !important;
+
+    & .menuWrapper {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        // justify-content: space-between;
+        gap: 700px;
+
+        & .menu {
+            margin-top: 10px;
+        }
+
+        & .profile_wrap {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .header {
+        display: flex;
+        // flex-direction: -reverse;
+        align-items: center;
+    }
     & .logo {
         // color: var(--color-bg-secondary);
         color: rgb(96, 109, 226);

@@ -1,5 +1,13 @@
 import React, { useState, type ReactNode } from "react";
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import {
+    HomeOutlined,
+    IdcardOutlined,
+    LogoutOutlined,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    UserOutlined,
+    VideoCameraOutlined,
+} from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
@@ -13,7 +21,7 @@ interface SideBarLayoutProps {
     footer?: ReactNode;
 }
 
-const SideBar: React.FC<SideBarLayoutProps> = ({ children, header, footer }) => {
+const SideBar: React.FC<SideBarLayoutProps> = ({ children, footer }) => {
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer, borderRadiusLG },
@@ -22,10 +30,10 @@ const SideBar: React.FC<SideBarLayoutProps> = ({ children, header, footer }) => 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const menuItems = [
+    const topMenuItems = [
         {
             key: RoutePath.main,
-            icon: <UserOutlined />,
+            icon: <HomeOutlined />,
             label: "Главная",
         },
         {
@@ -34,28 +42,58 @@ const SideBar: React.FC<SideBarLayoutProps> = ({ children, header, footer }) => 
             label: "Чат",
         },
         {
-            key: RoutePath.profile,
-            icon: <UploadOutlined />,
-            label: "Профиль",
+            key: RoutePath.system_management,
+            icon: <IdcardOutlined />,
+            label: "СУЗ",
         },
     ];
 
+    const bottomMenuItems = [
+        {
+            key: RoutePath.profile,
+            icon: <UserOutlined />,
+            label: "Профиль",
+        },
+        {
+            key: RoutePath.login,
+            icon: <LogoutOutlined />,
+            label: "Выйти",
+        },
+    ];
+
+    const handleMenuClick = ({ key }: { key: string }) => {
+        if (key === "logout") {
+            console.log("Logging out...");
+        } else {
+            navigate(key);
+        }
+    };
+
     return (
         <div className={s.wrapper}>
-            <Layout style={{ minHeight: "100vh" }}>
+            <Layout>
                 <Sider trigger={null} collapsible collapsed={collapsed} theme="light">
-                    <div className="demo-logo-vertical" />
-                    <h1 className={s.logo}>MediLink</h1>
-                    <Menu
-                        theme="light"
-                        mode="inline"
-                        selectedKeys={[location.pathname]}
-                        items={menuItems}
-                        onClick={({ key }) => navigate(key)}
-                    />
+                    <div className={s.menuWrapper}>
+                        <Menu
+                            theme="light"
+                            mode="inline"
+                            selectedKeys={[location.pathname]}
+                            items={topMenuItems}
+                            onClick={handleMenuClick}
+                            className={s.menu}
+                        />
+                        <Menu
+                            theme="light"
+                            mode="inline"
+                            selectedKeys={[location.pathname]}
+                            items={bottomMenuItems}
+                            onClick={handleMenuClick}
+                            className={s.profile_wrap}
+                        />
+                    </div>
                 </Sider>
                 <Layout>
-                    <Header style={{ padding: 0, background: colorBgContainer }}>
+                    <Header style={{ padding: 0, background: colorBgContainer }} className={s.header}>
                         <Button
                             type="text"
                             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -66,7 +104,7 @@ const SideBar: React.FC<SideBarLayoutProps> = ({ children, header, footer }) => 
                                 height: 64,
                             }}
                         />
-                        {header}
+                        <h1 className={s.logo}>MediLink</h1>
                     </Header>
                     <Content
                         style={{

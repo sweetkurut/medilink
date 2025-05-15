@@ -3,6 +3,7 @@ import { LoginPage } from "@/pages/LoginPage/LoginPage";
 import { MainPage } from "@/pages/MainPage/MainPage";
 import { ProfilePage } from "@/pages/ProfilePage/ProfilePage";
 import { SignUpPage } from "@/pages/SignUpPage/SignUpPage";
+import { SystemManagementPage } from "@/pages/SystemManagementPage/SystemManagementPage";
 import type { RouteProps } from "react-router-dom";
 
 export enum AppRoutes {
@@ -12,6 +13,7 @@ export enum AppRoutes {
     SIGN_UP = "signup",
     CHAT = "chat",
     PROFILE = "profile",
+    SUZ = "system_management",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -21,6 +23,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.SIGN_UP]: "/signup",
     [AppRoutes.CHAT]: "/chat",
     [AppRoutes.PROFILE]: "/profile",
+    [AppRoutes.SUZ]: "/system_management",
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -47,5 +50,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.PROFILE]: {
         path: RoutePath.profile,
         element: <ProfilePage />,
+    },
+    [AppRoutes.SUZ]: {
+        path: RoutePath.system_management,
+        element: <SystemManagementPage />,
     },
 };
