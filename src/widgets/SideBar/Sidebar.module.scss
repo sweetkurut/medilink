@@ -4,9 +4,10 @@
     & .menuWrapper {
         display: flex;
         flex-direction: column;
-        height: 90%;
-        // justify-content: space-between;
-        gap: 700px;
+        // height: 100%;
+        min-height: 100vh;
+        justify-content: space-between;
+        // gap: 700px;
 
         & .menu {
             margin-top: 10px;
